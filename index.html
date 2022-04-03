@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    table{
+        border:1px solid black;
+        border-collapse:collapse;
+        text-align:center
+    }
+    th,td{
+        border:1px solid black;
+        padding: 4px 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="mt-5 col-6">
+                <form onsubmit="studentData(event)" method="POST" id="myForm">
+                    <div class="row">
+                        <label for="fname">First name:</label>
+                        <input type="text" class="form-control" style="width: 500px;" id="fname" name="fname">
+                    </div>
+                    <div class="row">
+                        <label for="lname">Last name:</label>
+                        <input type="text" class="form-control" style="width: 500px;" id="lname" name="lname">
+                    </div>
+                    <div class="row">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" style="width: 500px;" id="email" name="email">
+                    </div>
+                    <div class="row">
+                        <label for="ph">Phone number:</label>
+                        <input type="number" class="form-control" style="width: 500px;" id="ph" name="ph">
+                    </div>
+                    <div class="row">
+                        <label for="matricNo">Matric Number:</label>
+                        <input type="number" class="form-control" style="width: 500px;" id="matricNo" name="matricNo">
+                    </div>
+                    <button  type="submit" class="addBtn btn btn-primary btn-sm mt-2"
+                        id="submitBtn">Submit</button>
+            </div>
+            </form>
+            <div class="pd-2 my-4 col-6" id="studentData">
+                <table id="myTable">
+                    <thread>
+                        <tr>
+                            <th>S/N</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Matric Number</th>
+                            <th>Action</th>
+                        </tr>
+                     
+                    </thread>
+                   <tbody id="table-body">
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
