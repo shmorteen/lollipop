@@ -24,7 +24,7 @@ function studentData(e) {
     document.getElementById("table-body").innerHTML= "";
     data.forEach((x, i)=>{
         let content = `<tr>
-        <td>${i}</td>
+        <td>${i + 1}</td>
         <td>${x.firstName}</td>
         <td>${x.lastName}</td>
         <td>${x.email}</td>
