@@ -30,7 +30,7 @@ function studentData(e) {
         <td>${x.email}</td>
         <td>${x.phoneNumber}</td>
         <td>${x.matricNumber}</td>
-        <td><button onclick="editData(${x},${i})"  type="button"  studentId="${i}" id="editBtn"class="edBtn btn btn-primary btn-sm mt-2">edit</button><span><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></span></td>
+        <td><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></span></td>
         </tr>`
         document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
     });
