@@ -15,7 +15,11 @@ function studentData(e) {
         matricNumber:matricNumber,
         
     }
+    if(newData.firstName != '' && newData.lastName != '' && newData.email != '' && newData.phoneNumber != '' && newData.matricNumber != ''){
     data.push(newData)
+    }else{
+        alert('Insert all missing fields')
+    }
     
     document.getElementById("table-body").innerHTML= "";
     data.forEach((x, i)=>{
@@ -30,8 +34,6 @@ function studentData(e) {
         </tr>`
         document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
     });
-    
-
     document.getElementById('myForm').reset();
     console.log(data)
 
@@ -50,7 +52,6 @@ function deleteData(e, i) {
         <td>${x.email}</td>
         <td>${x.phoneNumber}</td>
         <td>${x.matricNumber}</td>
-        <td><button type="button" class="edBtn btn btn-primary btn-sm mt-2">edit</button>
         <span><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></span></td>
         </tr>`
         document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
@@ -58,24 +59,27 @@ function deleteData(e, i) {
 }
 
 
-function editData(e, x, i){
-    e.preventDefault();
-    x.map(editData(x.firstName + x.lastName + x,email + x.phoneNumber + x.matricNumber, i));
-    // alert("edit is working")
-     document.getElementById("table-body").innerHTML= "";
-    data.forEach((x, i)=>{
-        let content = `<tr>
-        <td>${i}</td>
-        <td>${x.firstName}</td>
-        <td>${x.lastName}</td>
-        <td>${x.email}</td>
-        <td>${x.phoneNumber}</td>
-        <td>${x.matricNumber}</td>
-        <td><button type="button" class="edBtn btn btn-primary btn-sm mt-2">edit</button><span><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></span></td>
-        </tr>`
-        document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
-    });
+// function editData(e, x, i){
+//     e.preventDefault();
+//     x.map(editData(x.firstName + x.lastName + x,email + x.phoneNumber + x.matricNumber, i));
+//     alert("edit is working")
+//      document.getElementById("table-body").innerHTML= "";
+//     data.forEach((x, i)=>{
+//         let content = `<tr>
+//         <td>${i}</td>
+//         <td>${x.firstName}</td>
+//         <td>${x.lastName}</td>
+//         <td>${x.email}</td>
+//         <td>${x.phoneNumber}</td>
+//         <td>${x.matricNumber}</td>
+//         <td><button onclick="editData(event, ${i})"  type="button"  studentId="${i}" class="edit btn btn-primary btn-sm mt-2">edit</button>
+//         <span><button type="button" class="edBtn btn btn-primary btn-sm mt-2">edit</button></span></td>  
+//         </tr>`
+//         document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
+//     });
 
-}
+// }
+{/* <td><button type="button" class="edBtn btn btn-primary btn-sm mt-2">edit</button> */}
+
 
 
