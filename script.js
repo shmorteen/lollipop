@@ -7,6 +7,12 @@ function studentData(e) {
     var phoneNumber = document.getElementById("ph").value;
     var matricNumber = document.getElementById("matricNo").value;
   
+    // var newfirstName = document.getElementById("nfname").value;
+    // var newlastName = document.getElementById("nlname").value;
+    // var newemail = document.getElementById("nemail").value;
+    // var newphoneNumber = document.getElementById("nph").value;
+    // var newmatricNumber = document.getElementById("nmatricNo").value;
+    
     let newData={
         firstName:firstName,
         lastName:lastName,
@@ -15,7 +21,7 @@ function studentData(e) {
         matricNumber:matricNumber,
         
     }
-    if(newData.firstName != '' && newData.lastName != '' && newData.email != '' && newData.phoneNumber != '' && newData.matricNumber != ''){
+    if(newData.firstName != '' || newData.lastName != '' || newData.email != '' || newData.phoneNumber != '' || newData.matricNumber != ''){
     data.push(newData)
     }else{
         alert('Insert all missing fields')
@@ -30,7 +36,7 @@ function studentData(e) {
         <td>${x.email}</td>
         <td>${x.phoneNumber}</td>
         <td>${x.matricNumber}</td>
-        <td><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></span></td>
+        <td><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></td>
         </tr>`
         document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
     });
@@ -52,7 +58,7 @@ function deleteData(e, i) {
         <td>${x.email}</td>
         <td>${x.phoneNumber}</td>
         <td>${x.matricNumber}</td>
-        <span><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></span></td>
+        <td><button onclick="deleteData(event, ${i})"  type="button"  studentId="${i}" class="deleteBtn btn btn-primary btn-sm mt-2">delete</button></td>
         </tr>`
         document.getElementById("table-body").insertAdjacentHTML("beforeend", content)  
     });
